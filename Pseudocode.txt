@@ -1,0 +1,35 @@
+START
+
+READ AND WRITE kodeBarang WITH STRING
+READ AND WRITE namaBarang WITH STRING
+READ AND WRITE harga WITH DOUBLE
+READ AND WRITE totalHarga WITH DOUBLE
+READ AND WRITE totalPembayaran WITH DOUBLE
+READ AND WRITE uangPembayaran WITH DOUBLE
+READ AND WRITE kembalian WITH DOUBLE
+READ AND WRITE jumlahBarang WITH INT
+
+FUNCTION input
+    WRITE("Silahkan Masukkan kode Barang : ");
+    READ(kodeBarang);
+
+    IF "kodeBarang" is true
+        READ( namaBarang && harga);
+    ELSE 
+        WRITE ("Silahkan Masukkan nama Barang : ");
+        READ( namaBarang && harga);
+
+    READ AND WRITE ("Silahkan masukkan jumlah barang : ");
+    STORE (totalHarga = harga * jumlahBarang);
+END FUNCTION
+
+IF "Apakah tambah pembelian" is true
+    input
+ELSE 
+    STORE (totalPembayaran = totalHarga[0] + totalHarga[1] + totalHarga[2] + ...);
+
+READ AND WRITE ("Silahkan masukkan uang pembayaran : ");
+STORE (kembalian = uangPembayaran - totalPembayaran);
+PRINT (cetak bukti pembayaran);
+
+END
